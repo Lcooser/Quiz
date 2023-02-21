@@ -8,16 +8,20 @@ import "./GameOver.css"
 
 
 const GameOver = () => {
-  return (
-    <div id="gameover">
-        <h2>Game Over</h2>
-        <p>Score: x</p>
-        <p>You've aswered y of z questions.</p>
-        <img src={WellDone} alt="End of quiz" />
-        <button>Restart</button>
-        
-    </div>
-  )
+
+    const [quizState, dispatch] = useContext(QuizContext)
+
+
+    return (
+        <div id="gameover">
+            <h2>Game Over</h2>
+            <p>Score: {quizState.score}</p>
+            <p>You've aswered right {quizState.score} of {quizState.questions.length}{" "} questions.</p>
+            <img src={WellDone} alt="End of quiz" />
+            <button>Restart</button>
+            
+        </div>
+    )
 }
 
 export default GameOver
