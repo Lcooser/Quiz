@@ -1,9 +1,16 @@
-
+import { useContext } from "react"
+import {QuizContext} from "../context/quiz"
 import Quiz from '../img/quiz.svg'
 
 import './Welcome.css'
 
+
 const Welcome = () => {
+  const quizState = useContext(QuizContext)
+
+  
+
+
   return (
     <div>
         <h2>Seja bem-vindo</h2>
